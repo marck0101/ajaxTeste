@@ -16,3 +16,4 @@ echo $_GET['teste'];
 // Faz um insert na tabela formulario
 
 // Se não tiver cliente com o mesmo nome, faz um insert na tabela
+
