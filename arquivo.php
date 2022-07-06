@@ -2,11 +2,22 @@
 
 // header("Content-Type: application/JSON: charset=UTF-8");
 
-echo "TESTE: \n";
-print_r($_GET); 
+// echo "TESTE: \n";
+// print_r($_GET); 
 
-echo "TEste: \n";
-echo $_GET['teste'];
+// echo "TEste: \n";
+// echo $_GET['teste'];
+
+print_r($_GET);
+echo "deu certo ?";
+
+// $JsonParser = file_get_contents("myfile.json");
+// var_dump($JsonParser);
+
+// $Json = file_get_contents("myfile.json");
+// // Converts to an array 
+// $myarray = json_decode($Json, true);
+// var_dump($myarray); // prints array
 
 // Conecta no banco de dados
 
