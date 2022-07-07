@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Solicitacao</title>
+    <script>
+      var ajax = new XMLHttpRequest();
+      //metodo, nome do arquivo, false se é síncrona
+      ajax.open("GET", "dados.txt", false);
+      ajax.send();
+      ajax.onreadystatechange = function () {
+        if (ajax.status == 200) {
+          if (ajax.readyState == 3) {
+            console.log("carregando");
+          }
+          if (ajax.readyState == 4) {
+            console.log(ajax.responseText);
+            var elemento = document.getElementById("dinamico");
+            elemento.innerHTML = ajax.responseText;
+          } else {
+            console.log("Erro na operação");
+          }
+        }
+
+        console.log(ajax.readyState);
+      };
+    </script>
+  </head>
+
+  <body>
+    <div id="dinamico"></div>
+    <h1></h1>
+  </body>
+</html>

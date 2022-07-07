@@ -11,6 +11,9 @@
 print_r($_GET);
 echo "deu certo ?";
 
+$json = file_get_contents("data.json");
+$data = json_decode($json);
+
 // $JsonParser = file_get_contents("myfile.json");
 // var_dump($JsonParser);
 
