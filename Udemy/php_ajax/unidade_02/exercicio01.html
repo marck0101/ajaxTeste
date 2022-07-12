@@ -4,30 +4,44 @@
     <meta charset="UTF-8" />
     <title>Solicitacao</title>
     <script>
-      var ajax = new XMLHttpRequest();
-      //metodo, nome do arquivo, false se é síncrona
-      ajax.open("GET", "dados.txt", false);
-      ajax.send();
-      ajax.onreadystatechange = function () {
-        if (ajax.status == 200) {
-          if (ajax.readyState == 3) {
-            console.log("carregando");
-          }
-          if (ajax.readyState == 4) {
-            console.log(ajax.responseText);
-            var elemento = document.getElementById("dinamico");
-            elemento.innerHTML = ajax.responseText;
-          } else {
-            console.log("Erro na operação");
-          }
+      function carregaDados() {
+        var ajax;
+        if (window.XMLHttpRequest) {
+          ajax = new XMLHttpRequest();
+        } else {
+          ajax = new ActiveXObject("Microsoft.XMLHTTP");
         }
 
-        console.log(ajax.readyState);
-      };
+        //metodo, nome do arquivo, false se é síncrona
+        ajax.open(
+          "GET",
+          "file:///C:/xampp/htdocs/php_ajax/unidade_02/dados.txt",
+          false
+        );
+
+        ajax.onreadystatechange = function () {
+          if (ajax.status == 200) {
+            if (ajax.readyState == 3) {
+              console.log("carregando");
+            }
+            if (ajax.readyState == 4) {
+              console.log(ajax.responseText);
+              var elemento = document.getElementById("dinamico");
+              elemento.innerHTML = ajax.responseText;
+            } else {
+              console.log("Erro na operação");
+            }
+          }
+
+          console.log(ajax.readyState);
+        };
+        ajax.send(null);
+      }
     </script>
   </head>
 
   <body>
+    <button onclick="carregaDados()" id="botao">Botão</button>
     <div id="dinamico"></div>
     <h1></h1>
   </body>
