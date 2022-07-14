@@ -61,11 +61,8 @@ function calculo() {
 function mae() {
   console.log("entrou ma funcao mae");
   var dados = capturaDados();
-
   var form = nomeEmail();
-
   var soma = calculo();
-
   enviaRequest();
 }
 

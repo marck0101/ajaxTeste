@@ -16,13 +16,44 @@ $data = json_decode($json);
 
 //-------------------------------------------------//
 echo '<pre>';
-$dadosJson = file_get_contents('./json/dados.json');
+$dadosJson = file_get_contents('./js/script.js');
 $dadosJsonDecodificados = json_decode($dadosJson);
 
 foreach($dadosJsonDecodificados->clientes as $cliente){
 
     echo $cliente->id . ' - ' . $cliente->nome . PHP_EOL;
 }
+$dadosJsonErro = file_get_contents('./js/script.js');
+$dadosErroDecodificados = json_decode($dadosJsonErro);
+print_r($dadosErroDecodificados);
+print_r(json_last_error());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // $JsonParser = file_get_contents("myfile.json");
