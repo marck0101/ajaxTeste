@@ -14,6 +14,17 @@ echo "deu certo ?";
 $json = file_get_contents("data.json");
 $data = json_decode($json);
 
+//-------------------------------------------------//
+echo '<pre>';
+$dadosJson = file_get_contents('./json/dados.json');
+$dadosJsonDecodificados = json_decode($dadosJson);
+
+foreach($dadosJsonDecodificados->clientes as $cliente){
+
+    echo $cliente->id . ' - ' . $cliente->nome . PHP_EOL;
+}
+
+
 // $JsonParser = file_get_contents("myfile.json");
 // var_dump($JsonParser);
 
@@ -23,7 +34,6 @@ $data = json_decode($json);
 // var_dump($myarray); // prints array
 
 // Conecta no banco de dados
-
 
 // Faz um insert na tabela grid
 
