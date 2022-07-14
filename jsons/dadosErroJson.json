@@ -1,0 +1,21 @@
+//{/* tirar uma aspa ou vírgura só pada poder gerar um erro*/}
+
+{
+  "clientes": [
+    {
+      "id": "1",
+      "nome": "Marcos",
+      "email": "marcos.teste@teste"
+    },
+    {
+      "id": "2",
+      "nome": "henrique",
+      "email": "henrique.teste@teste"
+    },
+    {
+      "id": "3",
+      "nome": "correa",
+      "email": "correa.teste@teste"
+    }
+  ]
+}
